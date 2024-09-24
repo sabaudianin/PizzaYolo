@@ -1,0 +1,42 @@
+@keyframes moveIcon {
+	0% {
+		left: 0;
+		transform: rotateY(0deg);
+	}
+	49.9% {
+		left: calc(100% - 24px);
+		transform: rotateY(0deg);
+	}
+	50% {
+		left: calc(100% - 24px);
+		transform: rotateY(180deg);
+	}
+	100% {
+		left: 0;
+		transform: rotateY(180deg);
+	}
+}
+
+@keyframes spining {
+	0% {
+		rotate: 0;
+	}
+	50% {
+		rotate: 180deg;
+	}
+	100% {
+		rotate: 360deg;
+	}
+}
+
+@keyframes pulsingBorder {
+	0% {
+		border-color: #691607;
+	}
+	50% {
+		border-color: #de2d0e;
+	}
+	100% {
+		border-color: #691607;
+	}
+}
