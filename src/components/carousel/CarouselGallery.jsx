@@ -23,7 +23,12 @@ export const CarouselGallery = () => {
 					component="img"
 					src={image}
 					alt={`Slideshow ${index + 1}`}
-					sx={{ height: 450, width: "100%", objectFit: "cover" }}
+					sx={{
+						height: 350,
+						width: "100%",
+						objectFit: "cover",
+						borderRadius: "5%",
+					}}
 				/>
 			))}
 		</Carousel>

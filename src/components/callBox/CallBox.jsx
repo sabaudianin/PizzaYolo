@@ -12,16 +12,18 @@ export const CallBox = ({ phoneNumber }) => {
 					display: "inline-flex",
 					alignItems: "center",
 					justifyContent: "center",
-					p: 1,
-					mt: 5,
+					px: 2,
+					m: "auto",
+					height: "5vh",
 					overflow: "hidden",
 					fontWeight: "bold",
 					transition: "all 1s ease-out",
-					border: "5px solid #de2d0e",
+					border: "2px solid #de2d0e",
 					borderRadius: "10%",
 					boxShadow: 5,
 					cursor: "pointer",
 					textDecoration: "none",
+					background: "black",
 
 					"&:hover": {
 						animation: "pulsingBorder 1.5s infinite ease-in-out",
@@ -45,7 +47,6 @@ export const CallBox = ({ phoneNumber }) => {
 						width: "100%",
 						height: "100%",
 						color: "red",
-						// backgroundColor: "#53803c",
 						transition: "transform 0.3s ease",
 						transform: "translateX(-100%)",
 					}}
@@ -58,7 +59,7 @@ export const CallBox = ({ phoneNumber }) => {
 						display: "flex",
 						alignItems: "center",
 						justifyContent: "center",
-						color: "#53803c",
+						color: "white",
 						transition: "transform 0.3s ease",
 					}}
 				>

@@ -9,7 +9,7 @@ export const Menu = () => {
 				px: 2,
 				py: 5,
 				my: 4,
-				background: "lightGray",
+				background: "linear-gradient(rgb(246, 216, 216), rgb(50, 66, 45)",
 				opacity: "85%",
 				fontFamily: "Roboto",
 				borderRadius: 1,

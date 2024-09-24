@@ -13,6 +13,10 @@ export const AppLayout = () => {
 			sx={{
 				// minHeight: "100vh",
 				minWidth: 400,
+
+				background: "url(/pizza70.jpg)",
+				backgroundAttachment: "fixed",
+				backgroundSize: "cover",
 			}}
 		>
 			<Grid container>
@@ -26,6 +30,7 @@ export const AppLayout = () => {
 						flexDirection: "column",
 						alignItems: "center",
 						justifyContent: "space-between",
+						mt: "15vh",
 					}}
 				>
 					<Outlet />
@@ -38,7 +43,7 @@ export const AppLayout = () => {
 					textAlign: "center",
 				}}
 			>
-				<Footer />
+				<Footer id="contact" />
 			</Grid>
 		</Grid>
 	);

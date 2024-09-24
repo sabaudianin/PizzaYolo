@@ -16,8 +16,9 @@ import { useColorModeContext } from "../../context/theme-color/ThemeModeProvider
 import { Logo } from "../Logo/Logo";
 import { RenderDrawerMenu } from "./renderDrawerMenu";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { CallBox } from "../../components/callBox/CallBox";
+import { phoneNumber } from "../../constants";
 
-// Optymalizowany komponent CustomBottomNavigation:
 export const CustomBottomNavigation = styled(BottomNavigation)(() => ({
 	height: "10vh",
 	position: "relative",
@@ -55,7 +56,8 @@ export const SimpleNavigation = () => {
 	return (
 		<Box
 			sx={{
-				position: "relative",
+				position: "fixed",
+				zIndex: 20,
 				boxShadow: "-7px 33px 99px -2px rgba(145,140,145,1)",
 				height: "10vh",
 				display: "flex",
@@ -63,7 +65,6 @@ export const SimpleNavigation = () => {
 				alignItems: "center",
 				width: "100%",
 				padding: "0 2rem",
-				background: "url(/pizza70.jpg) center/cover no-repeat",
 			}}
 		>
 			<Box
@@ -118,12 +119,11 @@ export const SimpleNavigation = () => {
 				>
 					<BottomNavigationAction
 						label="MENU"
-						sx={{ color: "pink" }}
 						icon={<MenuBookIcon fontSize="large" sx={{ color: "#pink" }} />}
 					/>
 					<BottomNavigationAction
 						label="DOSTAWA"
-						sx={{ color: "pink" }}
+						sx={{ color: " #d0d3d4" }}
 						icon={
 							<DeliveryDiningIcon fontSize="large" sx={{ color: "pink" }} />
 						}
@@ -138,6 +138,7 @@ export const SimpleNavigation = () => {
 						sx={{ color: "pink" }}
 						icon={<CallIcon fontSize="large" sx={{ color: "pink" }} />}
 					/>
+					<CallBox phoneNumber={phoneNumber} />
 				</CustomBottomNavigation>
 			)}
 

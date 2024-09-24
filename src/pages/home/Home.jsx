@@ -10,6 +10,7 @@ import { HeroText } from "../../components/heroText/HeroText";
 import { SpinerPizza } from "../../components/spinerPizza/SpinerPizza";
 import { CallBox } from "../../components/callBox/CallBox";
 import { phoneNumber } from "../../constants";
+import { AboutCircles } from "../../components/aboutCircles/AboutCircles";
 
 export const Home = () => {
 	const location = useLocation();
@@ -45,16 +46,22 @@ export const Home = () => {
 	}, [location]);
 
 	return (
-		<Container maxWidth="lg">
-			<CallBox phoneNumber={phoneNumber} />
+		<Container
+			maxWidth="lg"
+			// sx={{
+			// 	background: "linear-gradient(to top ,red 80px, blue 80px)",
+			// }}
+		>
 			<HeroText />
+
 			<CarouselGallery />
+
 			<AboutBoxes />
 			<SpinerPizza />
 			<Box id="menu">
 				<Menu />
 			</Box>
-			{/* <Delivery />  */}
+			<AboutCircles />
 			<Box id="localization">
 				<Localization />
 			</Box>

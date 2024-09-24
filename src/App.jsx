@@ -5,6 +5,7 @@ import { Home } from "./pages/home/Home";
 import { useColorModeContext } from "./context/theme-color/ThemeModeProvider";
 import { AppLayout } from "./components/appLayout/AppLayout";
 import "./App.css";
+import { Menu } from "./pages/menu/Menu";
 
 export const App = () => {
 	const { theme } = useColorModeContext();
@@ -22,7 +23,7 @@ export const App = () => {
 					<Route element={<AppLayout />}>
 						<Route path="/" element={<Home />} />
 						<Route path="/localization" element={<Home />} />
-						<Route path="/menu" element={<Home />} />
+						<Route path="/menu" element={<Menu />} />
 					</Route>
 				</Routes>
 			</BrowserRouter>
