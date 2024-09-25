@@ -1,10 +1,8 @@
-import React from "react";
 import { Box, Typography } from "@mui/material";
 
 export const Menu = () => {
 	return (
 		<Box
-			id="menu"
 			sx={{
 				px: 2,
 				py: 5,
