@@ -1,20 +1,19 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect, useMemo } from "react";
+
 import { useColorModeContext } from "../context/theme-color/ThemeModeProvider";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 
-export const useNavigationScroll = () => {
-	const [value, setValue] = useState(1);
+export const useWindowScroll = () => {
+	const [value, setValue] = useState(null);
 	const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 	const { theme, toggleTheme } = useColorModeContext();
-	const navigate = useNavigate();
 	const muiTheme = useTheme();
-	const isScreenSmall = useMediaQuery(muiTheme.breakpoints.down("md"));
 	const [isSticky, setIsSticky] = useState(false);
+	const isScreenSmall = useMediaQuery(muiTheme.breakpoints.down("md"));
 
 	const handleScroll = () => {
-		if (window.scrollY > window.innerHeight * 0.5) {
+		if (window.scrollY > window.innerHeight * 0.25) {
 			setIsSticky(true);
 		} else {
 			setIsSticky(false);
@@ -28,11 +27,9 @@ export const useNavigationScroll = () => {
 		};
 	}, []);
 
-	const handleNavigate = (newValue) => {
-		setValue(newValue);
-		const targets = ["menu", "delivery", "localization", "contact"];
-		navigate("/", { state: { target: targets[newValue] } });
-	};
+	useEffect(() => {
+		setValue(null);
+	}, []);
 
 	return {
 		value,
@@ -43,6 +40,5 @@ export const useNavigationScroll = () => {
 		toggleTheme,
 		isScreenSmall,
 		isSticky,
-		handleNavigate,
 	};
 };

@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Typography } from "@mui/material";
 import { Map } from "../../components/map/Map";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";

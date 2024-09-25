@@ -1,4 +1,4 @@
-import { Box, Typography, Link, Container } from "@mui/material";
+import { Box, Typography, Container } from "@mui/material";
 import { FacebookLink } from "../facebookLink/FacebookLink";
 import HomeIcon from "@mui/icons-material/Home";
 import QueryBuilderIcon from "@mui/icons-material/QueryBuilder";
@@ -8,6 +8,7 @@ import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 export const Footer = () => {
 	return (
 		<Container
+			id="contact"
 			sx={{
 				display: "flex",
 				flexDirection: {

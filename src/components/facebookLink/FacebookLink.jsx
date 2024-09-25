@@ -1,4 +1,4 @@
-import { Box, Typography, Link, Container } from "@mui/material";
+import { Box, Link } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 
 export const FacebookLink = () => {

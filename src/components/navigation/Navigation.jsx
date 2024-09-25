@@ -4,26 +4,27 @@ import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import CallIcon from "@mui/icons-material/Call";
-import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import IconButton from "@mui/material/IconButton";
+import FacebookIcon from "@mui/icons-material/Facebook";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Logo } from "../Logo/Logo";
 import { RenderDrawerMenu } from "./renderDrawerMenu";
 import { CallBox } from "../../components/callBox/CallBox";
 import { phoneNumber } from "../../constants";
-import { useNavigationScroll } from "../../hooks/useNavigationScroll";
+import { useWindowScroll } from "../../hooks/useWindowScroll";
+import { useScrollToSection } from "../../hooks/useScrollToSection";
 
 export const CustomBottomNavigation = styled(BottomNavigation)(() => ({
 	height: "10vh",
 	position: "relative",
 
 	"& .Mui-selected": {
-		color: "var(--secondaryColor)",
+		color: "tomato",
 		"& .MuiSvgIcon-root": {
-			color: "var(--secondaryColor) ",
+			color: "#8b0813 ",
 		},
 	},
 	"& .MuiBottomNavigationAction-label": {
@@ -33,9 +34,6 @@ export const CustomBottomNavigation = styled(BottomNavigation)(() => ({
 	"& .MuiBottomNavigationAction-root:hover": {
 		color: "var(--primaryColor)",
 		textShadow: "0 0 5px var(--primaryColor)",
-		"& .MuiSvgIcon-root": {
-			color: "var(--primaryColor)",
-		},
 	},
 }));
 
@@ -49,23 +47,39 @@ export const SimpleNavigation = () => {
 		toggleTheme,
 		isScreenSmall,
 		isSticky,
-		handleNavigate,
-	} = useNavigationScroll();
+	} = useWindowScroll();
+
+	const { handleNavigate } = useScrollToSection();
 
 	return (
 		<Box
 			sx={{
+				width: "100%",
+				height: isSticky ? "10vh" : "15vh",
 				position: isSticky ? "fixed" : "absolute",
+				top: 0,
+				left: 0,
 				zIndex: 20,
 				boxShadow: "-7px 33px 99px -2px rgba(145,140,145,1)",
-				height: isSticky ? "10vh" : "15vh",
 				display: "flex",
 				justifyContent: "space-between",
 				alignItems: "center",
-				width: "100%",
 				padding: "0 2rem",
+				transition: "1s",
 			}}
 		>
+			<IconButton
+				sx={{
+					position: "absolute",
+					top: 5,
+					left: 5,
+					zIndex: 25,
+					color: "#c6babb",
+				}}
+				onClick={toggleTheme}
+			>
+				{theme === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
+			</IconButton>
 			<Box
 				sx={{
 					position: "absolute",
@@ -74,7 +88,7 @@ export const SimpleNavigation = () => {
 					width: "100%",
 					height: "100%",
 					backgroundImage: isSticky
-						? "linear-gradient(90deg, rgba(245,255,247,1) 5%, rgba(237,240,221,1) 78%, rgba(238,214,207,1) 100%)"
+						? "linear-gradient(90deg, rgba(170,108,115,1) 0%, rgba(116,104,105,1) 35%, rgba(71,92,70,1) 100%)"
 						: "none",
 					backgroundColor: isSticky ? "transparent" : "rgba(0, 0, 0, 0.5)",
 					zIndex: 1,
@@ -83,23 +97,11 @@ export const SimpleNavigation = () => {
 			<Box
 				sx={{
 					position: "relative",
-					zIndex: 2,
+					zIndex: 25,
 					display: "flex",
 					alignItems: "center",
 				}}
 			>
-				<IconButton
-					sx={{
-						ml: 1,
-						position: "absolute",
-						top: 0,
-						right: -15,
-						color: "var(--primaryColor)",
-					}}
-					onClick={toggleTheme}
-				>
-					{theme === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
-				</IconButton>
 				<Logo />
 			</Box>
 
@@ -111,7 +113,7 @@ export const SimpleNavigation = () => {
 						onClick={() => setDrawerIsOpen(true)}
 						sx={{ zIndex: 2, position: "relative" }}
 					>
-						<MenuIcon sx={{ fontSize: 38 }} />
+						<MenuIcon sx={{ fontSize: 50, color: "var(--primaryColor)" }} />
 					</IconButton>
 					<RenderDrawerMenu
 						handleNavigate={handleNavigate}
@@ -132,23 +134,39 @@ export const SimpleNavigation = () => {
 					onChange={(event, newValue) => handleNavigate(newValue)}
 				>
 					<BottomNavigationAction
-						sx={{ color: "var(--primaryColor)" }}
-						label="MENU"
+						sx={{
+							color: "var(--primaryColor)",
+							textShadow: "var(--txtShadow)",
+						}}
+						label="Menu"
 						icon={<MenuBookIcon fontSize="large" />}
 					/>
 					<BottomNavigationAction
-						sx={{ color: "var(--primaryColor)" }}
-						label="DOSTAWA"
-						icon={<DeliveryDiningIcon fontSize="large" />}
+						component="a"
+						href="https://www.facebook.com/5stradapizza"
+						target="_blank"
+						rel="noopener noreferrer"
+						sx={{
+							color: "var(--primaryColor)",
+							textShadow: "var(--txtShadow)",
+						}}
+						label="Promocje"
+						icon={<FacebookIcon fontSize="large" sx={{ color: "lightblue" }} />}
 					/>
 					<BottomNavigationAction
-						sx={{ color: "var(--primaryColor)" }}
-						label="LOKALIZACJA"
+						sx={{
+							color: "var(--primaryColor)",
+							textShadow: "var(--txtShadow)",
+						}}
+						label="Lokalizacja"
 						icon={<LocationOnIcon fontSize="large" />}
 					/>
 					<BottomNavigationAction
-						sx={{ color: "var(--primaryColor)" }}
-						label="KONTAKT"
+						sx={{
+							color: "var(--primaryColor)",
+							textShadow: "var(--txtShadow)",
+						}}
+						label="Kontakt"
 						icon={<CallIcon fontSize="large" />}
 					/>
 					<CallBox phoneNumber={phoneNumber} />
