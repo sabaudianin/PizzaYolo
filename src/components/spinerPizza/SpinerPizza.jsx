@@ -11,7 +11,7 @@ export const SpinerPizza = () => {
 				"::before": {
 					content: '" "',
 					width: "30%",
-					border: "1px solid red",
+					border: "1px solid var(--primaryColor)",
 					position: "absolute",
 					top: "50%",
 					left: 0,
@@ -19,7 +19,7 @@ export const SpinerPizza = () => {
 				"::after": {
 					content: '" "',
 					width: "30%",
-					border: "1px solid green",
+					border: "1px solid var(--secondaryColor)",
 					position: "absolute",
 					top: "50%",
 					right: 0,

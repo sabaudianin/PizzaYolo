@@ -9,20 +9,32 @@ export const Menu = () => {
 				px: 2,
 				py: 5,
 				my: 4,
-				background: "lightGray",
-				opacity: "85%",
+				position: "relative",
 				fontFamily: "Roboto",
 				borderRadius: 1,
 				boxShadow: " 0 0 10px rgba(100, 100, 100, 0.5) ",
 			}}
 		>
+			<Box
+				sx={{
+					background: "url(/2Pizza5_n.jpg)",
+					backkroundSize: "cover",
+					backgroundPosition: "center",
+					position: "absolute",
+					top: 0,
+					left: 0,
+					width: "100%",
+					height: "100%",
+					opacity: "20%",
+				}}
+			></Box>
 			<Typography
 				variant="h4"
 				sx={{
 					mb: 4,
 					textAlign: "center",
 					fontFamily: "Lobster",
-					color: "tomato",
+					color: "var(--primaryColor)",
 				}}
 			>
 				Pizza Rossa
@@ -111,7 +123,13 @@ export const Menu = () => {
 			{/* Pizza Bianca */}
 			<Typography
 				variant="h4"
-				sx={{ mt: 4, mb: 2, textAlign: "center", fontFamily: "Lobster" }}
+				sx={{
+					mt: 4,
+					mb: 2,
+					textAlign: "center",
+					fontFamily: "Lobster",
+					color: "var(--secondaryColor)",
+				}}
 			>
 				Pizza Bianca
 			</Typography>
@@ -154,7 +172,13 @@ export const Menu = () => {
 			{/* Calzone */}
 			<Typography
 				variant="h4"
-				sx={{ mt: 4, mb: 2, textAlign: "center", fontFamily: "Lobster" }}
+				sx={{
+					mt: 4,
+					mb: 2,
+					textAlign: "center",
+					fontFamily: "Lobster",
+					color: "var(--primaryColor)",
+				}}
 			>
 				Calzone
 			</Typography>

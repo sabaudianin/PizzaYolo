@@ -77,7 +77,7 @@ export const RenderDrawerMenu = ({
 						<LocationOnIcon />
 					</ListItemIcon>
 					<ListItemText
-						primary="LOKALIZACJA"
+						primary="PROMOCJE"
 						primaryTypographyProps={{ fontSize: "24px" }}
 					/>
 				</StyledListItem>

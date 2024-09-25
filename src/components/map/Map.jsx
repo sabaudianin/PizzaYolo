@@ -6,7 +6,7 @@ export const Map = () => {
 		<MapContainer
 			center={mapPosition}
 			zoom={19}
-			style={{ height: "250px", width: "100%" }}
+			style={{ height: "300px", width: "100%" }}
 		>
 			<TileLayer
 				attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
