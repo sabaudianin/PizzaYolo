@@ -1,7 +1,5 @@
-import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
 import Box from "@mui/material/Box";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
@@ -12,54 +10,55 @@ import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useColorModeContext } from "../../context/theme-color/ThemeModeProvider";
 import { Logo } from "../Logo/Logo";
 import { RenderDrawerMenu } from "./renderDrawerMenu";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import { CallBox } from "../../components/callBox/CallBox";
 import { phoneNumber } from "../../constants";
+import { useNavigationScroll } from "../../hooks/useNavigationScroll";
 
 export const CustomBottomNavigation = styled(BottomNavigation)(() => ({
 	height: "10vh",
 	position: "relative",
 
 	"& .Mui-selected": {
-		color: "red",
+		color: "var(--secondaryColor)",
+		"& .MuiSvgIcon-root": {
+			color: "var(--secondaryColor) ",
+		},
 	},
 	"& .MuiBottomNavigationAction-label": {
 		fontSize: 20,
 		fontWeight: "bold",
 	},
 	"& .MuiBottomNavigationAction-root:hover": {
-		color: "pink",
-		textShadow: "0 0 5px pink",
+		color: "var(--primaryColor)",
+		textShadow: "0 0 5px var(--primaryColor)",
 		"& .MuiSvgIcon-root": {
-			color: "pink",
+			color: "var(--primaryColor)",
 		},
 	},
 }));
 
 export const SimpleNavigation = () => {
-	const [value, setValue] = useState(-1);
-	const [drawerIsOpen, setDrawerIsOpen] = useState(false);
-	const { theme, toggleTheme } = useColorModeContext();
-	const navigate = useNavigate();
-	const muiTheme = useTheme();
-	const isScreenSmall = useMediaQuery(muiTheme.breakpoints.down("md"));
-
-	const handleNavigate = (newValue) => {
-		setValue(newValue);
-		const targets = ["menu", "delivery", "localization", "contact"];
-		navigate("/", { state: { target: targets[newValue] } });
-	};
+	const {
+		value,
+		setValue,
+		drawerIsOpen,
+		setDrawerIsOpen,
+		theme,
+		toggleTheme,
+		isScreenSmall,
+		isSticky,
+		handleNavigate,
+	} = useNavigationScroll();
 
 	return (
 		<Box
 			sx={{
-				position: "fixed",
+				position: isSticky ? "fixed" : "absolute",
 				zIndex: 20,
 				boxShadow: "-7px 33px 99px -2px rgba(145,140,145,1)",
-				height: "10vh",
+				height: isSticky ? "10vh" : "15vh",
 				display: "flex",
 				justifyContent: "space-between",
 				alignItems: "center",
@@ -74,7 +73,10 @@ export const SimpleNavigation = () => {
 					left: 0,
 					width: "100%",
 					height: "100%",
-					backgroundColor: "rgba(0, 0, 0, 0.5)",
+					backgroundImage: isSticky
+						? "linear-gradient(90deg, rgba(245,255,247,1) 5%, rgba(237,240,221,1) 78%, rgba(238,214,207,1) 100%)"
+						: "none",
+					backgroundColor: isSticky ? "transparent" : "rgba(0, 0, 0, 0.5)",
 					zIndex: 1,
 				}}
 			/>
@@ -86,6 +88,18 @@ export const SimpleNavigation = () => {
 					alignItems: "center",
 				}}
 			>
+				<IconButton
+					sx={{
+						ml: 1,
+						position: "absolute",
+						top: 0,
+						right: -15,
+						color: "var(--primaryColor)",
+					}}
+					onClick={toggleTheme}
+				>
+					{theme === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
+				</IconButton>
 				<Logo />
 			</Box>
 
@@ -118,40 +132,28 @@ export const SimpleNavigation = () => {
 					onChange={(event, newValue) => handleNavigate(newValue)}
 				>
 					<BottomNavigationAction
+						sx={{ color: "var(--primaryColor)" }}
 						label="MENU"
-						icon={<MenuBookIcon fontSize="large" sx={{ color: "#pink" }} />}
+						icon={<MenuBookIcon fontSize="large" />}
 					/>
 					<BottomNavigationAction
+						sx={{ color: "var(--primaryColor)" }}
 						label="DOSTAWA"
-						sx={{ color: " #d0d3d4" }}
-						icon={
-							<DeliveryDiningIcon fontSize="large" sx={{ color: "pink" }} />
-						}
+						icon={<DeliveryDiningIcon fontSize="large" />}
 					/>
 					<BottomNavigationAction
+						sx={{ color: "var(--primaryColor)" }}
 						label="LOKALIZACJA"
-						sx={{ color: "pink" }}
-						icon={<LocationOnIcon fontSize="large" sx={{ color: "pink" }} />}
+						icon={<LocationOnIcon fontSize="large" />}
 					/>
 					<BottomNavigationAction
+						sx={{ color: "var(--primaryColor)" }}
 						label="KONTAKT"
-						sx={{ color: "pink" }}
-						icon={<CallIcon fontSize="large" sx={{ color: "pink" }} />}
+						icon={<CallIcon fontSize="large" />}
 					/>
 					<CallBox phoneNumber={phoneNumber} />
 				</CustomBottomNavigation>
 			)}
-
-			<IconButton
-				sx={{ ml: 1, position: "absolute", top: "10vh" }}
-				onClick={toggleTheme}
-			>
-				{theme === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
-			</IconButton>
 		</Box>
 	);
-};
-
-export const Navigation = () => {
-	return <SimpleNavigation />;
 };

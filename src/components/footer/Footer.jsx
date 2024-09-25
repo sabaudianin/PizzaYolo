@@ -35,8 +35,8 @@ export const Footer = () => {
 					},
 					boxShadow: " 0 0 10px rgba(100, 100, 100, 0.5) ",
 					p: 5,
-					borderBottom: "2px solid green",
-					borderTop: "2px solid red",
+					borderBottom: "2px solid var(--secondaryColor)",
+					borderTop: "2px solid var(--primaryColor)",
 					borderRadius: "5%",
 				}}
 			>
@@ -59,8 +59,8 @@ export const Footer = () => {
 					boxShadow: " 0 0 10px rgba(100, 100, 100, 0.5) ",
 					p: 5,
 					borderRadius: "5%",
-					borderLeft: "2px solid red",
-					borderRight: "2px solid green",
+					borderLeft: "2px solid var(--primaryColor)",
+					borderRight: "2px solid var(--secondaryColor)",
 					width: {
 						xs: "60%",
 						sm: "30%",
@@ -92,8 +92,8 @@ export const Footer = () => {
 					p: 5,
 
 					borderRadius: "5%",
-					borderBottom: "2px solid red",
-					borderTop: "2px solid green",
+					borderBottom: "2px solid var(--primaryColor)",
+					borderTop: "2px solid var(--secondaryColor)",
 				}}
 			>
 				<Typography>

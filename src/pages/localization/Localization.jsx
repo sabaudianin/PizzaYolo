@@ -27,7 +27,7 @@ export const Localization = () => {
 			<Typography variant="body1" sx={{ textAlign: "center", p: 2 }}>
 				Znajdujemy się tutaj
 				<ArrowDownwardIcon
-					sx={{ transform: "translateY(25%)", color: "red" }}
+					sx={{ transform: "translateY(25%)", color: "var(--primaryColor)" }}
 				/>
 			</Typography>
 			<Map />

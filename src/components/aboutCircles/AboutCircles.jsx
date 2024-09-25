@@ -12,10 +12,9 @@ export const AboutCircles = () => {
 		borderRadius: "50%",
 		padding: "30px",
 		textAlign: "center",
-		borderBottom: "2px solid red",
-		borderTop: "2px solid green",
+		borderBottom: "2px solid var(--primaryColor)",
+		borderTop: "2px solid var(--secondaryColor)",
 		margin: 10,
-		textShadow: " 1px 1px 1px #de2d0e ",
 	}));
 
 	const StyledTypography = styled(Typography)(() => ({
@@ -37,16 +36,16 @@ export const AboutCircles = () => {
 			}}
 		>
 			<StyledBox>
-				<EmojiFlagsIcon sx={{ color: "#de2d0e" }} />
+				<EmojiFlagsIcon sx={{ color: "var(--primaryColor)" }} />
 				<StyledTypography>Włoska Receptura</StyledTypography>
 			</StyledBox>
-			<StyledBox sx={{ textShadow: " 1px 1px 1px green " }}>
-				<SpaIcon sx={{ color: "green" }} />
+			<StyledBox>
+				<SpaIcon sx={{ color: "var(--secondaryColor)" }} />
 
 				<StyledTypography>Świeże składniki</StyledTypography>
 			</StyledBox>
 			<StyledBox>
-				<FavoriteIcon sx={{ color: "#de2d0e" }} />
+				<FavoriteIcon sx={{ color: "var(--primaryColor)" }} />
 				<StyledTypography>Tworzone z pasją</StyledTypography>
 			</StyledBox>
 		</Container>

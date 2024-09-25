@@ -18,7 +18,7 @@ export const CallBox = ({ phoneNumber }) => {
 					overflow: "hidden",
 					fontWeight: "bold",
 					transition: "all 1s ease-out",
-					border: "2px solid #de2d0e",
+					border: "2px solid var(--primaryColor)",
 					borderRadius: "10%",
 					boxShadow: 5,
 					cursor: "pointer",
@@ -46,7 +46,7 @@ export const CallBox = ({ phoneNumber }) => {
 						justifyContent: "center",
 						width: "100%",
 						height: "100%",
-						color: "red",
+						color: "var(--primaryColor)",
 						transition: "transform 0.3s ease",
 						transform: "translateX(-100%)",
 					}}

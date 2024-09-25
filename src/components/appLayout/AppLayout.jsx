@@ -2,25 +2,23 @@ import { Outlet } from "react-router-dom";
 import { Container, Box } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 
-import { Navigation } from "../navigation/Navigation";
+import { SimpleNavigation } from "../navigation/Navigation";
 import { Footer } from "../footer/Footer";
 
 export const AppLayout = () => {
 	return (
-		<Grid
-			container
-			direction="column"
-			sx={{
-				// minHeight: "100vh",
-				minWidth: 400,
-
-				background: "url(/pizza70.jpg)",
-				backgroundAttachment: "fixed",
-				backgroundSize: "cover",
-			}}
-		>
-			<Grid container>
-				<Navigation />
+		<Grid container direction="column">
+			<Grid
+				container
+				sx={{
+					height: "50vh",
+					minWidth: 400,
+					background: "url(/pizza70.jpg)",
+					backgroundAttachment: "fixed",
+					backgroundSize: "cover",
+				}}
+			>
+				<SimpleNavigation />
 			</Grid>
 			<Grid>
 				<Container

@@ -19,9 +19,9 @@ export const HeroText = () => {
 				display: "inline-block",
 				m: 5,
 				textAlign: "center",
-				borderTop: "2px solid green",
+				borderTop: "2px solid var(--primaryColor)",
 				paddingY: "20px",
-				borderBottom: "2px solid red",
+				borderBottom: "2px solid var(--secondaryColor)",
 			}}
 		>
 			<DeliveryDiningIcon
