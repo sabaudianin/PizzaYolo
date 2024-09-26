@@ -65,7 +65,7 @@ export const SimpleNavigation = () => {
 				justifyContent: "space-between",
 				alignItems: "center",
 				padding: "0 2rem",
-				transition: "1s",
+				transition: "2s",
 			}}
 		>
 			<IconButton
@@ -88,9 +88,9 @@ export const SimpleNavigation = () => {
 					width: "100%",
 					height: "100%",
 					backgroundImage: isSticky
-						? "linear-gradient(90deg, rgba(170,108,115,1) 0%, rgba(116,104,105,1) 35%, rgba(71,92,70,1) 100%)"
+						? "  linear-gradient(180deg, rgba(15,12,12,0.9) 0%, rgba(74,71,71,0.9417892156862745) 35%, rgba(0,0,0,0.9) 100%)"
 						: "none",
-					backgroundColor: isSticky ? "transparent" : "rgba(0, 0, 0, 0.5)",
+					backgroundColor: isSticky ? "transparent" : "rgba(0, 0, 0, 0.6)",
 					zIndex: 1,
 				}}
 			/>
@@ -147,11 +147,11 @@ export const SimpleNavigation = () => {
 						target="_blank"
 						rel="noopener noreferrer"
 						sx={{
-							color: "var(--primaryColor)",
+							color: "var(--secondaryColor)",
 							textShadow: "var(--txtShadow)",
 						}}
 						label="Promocje"
-						icon={<FacebookIcon fontSize="large" sx={{ color: "lightblue" }} />}
+						icon={<FacebookIcon fontSize="large" sx={{ color: "#31bfd2" }} />}
 					/>
 					<BottomNavigationAction
 						sx={{
@@ -163,7 +163,7 @@ export const SimpleNavigation = () => {
 					/>
 					<BottomNavigationAction
 						sx={{
-							color: "var(--primaryColor)",
+							color: "var(--secondaryColor)",
 							textShadow: "var(--txtShadow)",
 						}}
 						label="Kontakt"
