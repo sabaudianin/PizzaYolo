@@ -13,7 +13,7 @@ export const useWindowScroll = () => {
 	const isScreenSmall = useMediaQuery(muiTheme.breakpoints.down("md"));
 
 	const handleScroll = () => {
-		if (window.scrollY > window.innerHeight * 0.25) {
+		if (window.scrollY > window.innerHeight * 0.5) {
 			setIsSticky(true);
 		} else {
 			setIsSticky(false);
