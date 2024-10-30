@@ -1,5 +1,5 @@
 import Carousel from "react-material-ui-carousel";
-import { Paper, Typography, Box } from "@mui/material";
+import { Box } from "@mui/material";
 
 export const CarouselGallery = () => {
 	// Tablica obrazów do slideshow
