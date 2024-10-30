@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext, createContext, useMemo } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import PropTypes from "prop-types";
 
 const ColorModeContext = createContext();
 
@@ -45,3 +46,7 @@ export const ThemeModeProvider = ({ children }) => {
 };
 
 export const useColorModeContext = () => useContext(ColorModeContext);
+
+ThemeModeProvider.propTypes = {
+	children: PropTypes.node.isRequired,
+};

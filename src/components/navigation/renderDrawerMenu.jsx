@@ -8,6 +8,7 @@ import CallIcon from "@mui/icons-material/Call";
 import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { styled } from "@mui/material";
+import PropTypes from "prop-types";
 
 export const RenderDrawerMenu = ({
 	handleNavigate,
@@ -98,4 +99,10 @@ export const RenderDrawerMenu = ({
 			</List>
 		</Drawer>
 	);
+};
+
+RenderDrawerMenu.propTypes = {
+	handleNavigate: PropTypes.func.isRequired,
+	drawerIsOpen: PropTypes.bool.isRequired,
+	setDrawerIsOpen: PropTypes.func.isRequired,
 };

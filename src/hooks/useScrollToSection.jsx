@@ -48,17 +48,3 @@ export const useScrollToSection = () => {
 
 	return { handleNavigate };
 };
-
-// useEffect(() => {
-//     const target = location.state?.target || location.pathname.replace("/", "");
-
-//     if (target) {
-//       scroller.scrollTo(target, {
-//         duration: 500,
-//         smooth: "easeInOutQuart",
-//         offset: -100, // Dostosuj według potrzeb
-//       });
-//     } else {
-//       window.scrollTo({ top: 0, behavior: "smooth" });
-//     }
-//   }, [location]);

@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 
 import { useColorModeContext } from "../context/theme-color/ThemeModeProvider";
 import useMediaQuery from "@mui/material/useMediaQuery";

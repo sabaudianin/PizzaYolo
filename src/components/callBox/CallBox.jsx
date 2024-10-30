@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import PhoneIcon from "@mui/icons-material/Phone";
+import PropTypes from "prop-types";
 
 export const CallBox = ({ phoneNumber }) => {
 	return (
@@ -70,4 +71,8 @@ export const CallBox = ({ phoneNumber }) => {
 			</Box>
 		</Box>
 	);
+};
+
+CallBox.propTypes = {
+	phoneNumber: PropTypes.string.isRequired,
 };

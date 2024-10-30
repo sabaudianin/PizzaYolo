@@ -1,4 +1,7 @@
-import { Box, Typography, Container } from "@mui/material";
+import { Box, Typography, Container, Link, IconButton } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+
 import { FacebookLink } from "../facebookLink/FacebookLink";
 import HomeIcon from "@mui/icons-material/Home";
 import QueryBuilderIcon from "@mui/icons-material/QueryBuilder";
@@ -112,13 +115,41 @@ export const Footer = () => {
 			</Box>
 			<Box
 				sx={{
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					gap: "24px",
 					width: "100%",
 					mt: 6,
 					background: "rgba(100, 100, 100, 0.2)",
 					boxShadow: " 0 -5px 50px rgba(100, 100, 100, 0.7) ",
 				}}
 			>
-				<Typography>boobec@vp.pl - Design,Develop,Done</Typography>
+				<div style={{ display: "flex", gap: "8px" }}>
+					<Link
+						href="https://github.com/sabaudianin"
+						target="_blank"
+						rel="noopener noreferrer"
+						underline="none"
+					>
+						<IconButton aria-label="GitHub" color="inherit">
+							<GitHubIcon />
+						</IconButton>
+					</Link>
+					<Link
+						href="https://linkedin.com/in/rafal-bobko-569388234"
+						target="_blank"
+						rel="noopener noreferrer"
+						underline="none"
+					>
+						<IconButton aria-label="LinkedIn" color="primary">
+							<LinkedInIcon />
+						</IconButton>
+					</Link>
+				</div>
+				<Typography sx={{ fontSize: "large", fontWeight: "bold" }}>
+					<i className="fa-regular fa-envelope "></i>&nbsp; rafbobbob@gmail.com
+				</Typography>
 			</Box>
 		</Container>
 	);
